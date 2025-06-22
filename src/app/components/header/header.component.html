@@ -1,0 +1,146 @@
+<!-- Header  -->
+<header
+  class="fixed w-full top-0 bg-white z-50 transition-all duration-300 ease-in-out"
+  [ngClass]="{
+    'bg-white': !isScrolled(),
+    'bg-black': isScrolled()
+  }"
+>
+  <nav
+    class="py-[18px] shared-max-w animate-header max-w-[1800px] items-center mx-auto lg:py-[15px] lg:h-[80px] lg:flex lg:justify-between lg:w-[95%]"
+  >
+    <!-- Logo -->
+    <div class="hidden lg:block">
+      <img class="logo-size cs-logo-size" src="images/logo.webp" alt="Logo" />
+    </div>
+    <!-- /Logo -->
+
+    <!-- Links -->
+    <ul
+      #logoLinks
+      [class.link-color]="isScrolled()"
+      class="hidden lg:block text-[#414141] lg:flex items-center"
+    >
+      <li class="header-links">
+        <a class="header-link" (click)="handleNavigationClick('header')">
+          home</a
+        >
+      </li>
+
+      <li class="header-links">
+        <a class="header-link" (click)="handleNavigationClick('about-us')"
+          >about us</a
+        >
+      </li>
+
+      <li class="header-links">
+        <a class="header-link" (click)="handleNavigationClick('products')"
+          >product & services</a
+        >
+      </li>
+
+      <li class="header-links">
+        <a class="header-link" (click)="handleNavigationClick('partners')"
+          >partners/clients</a
+        >
+      </li>
+
+      <li class="header-links">
+        <a
+          class="header-link"
+          (click)="handleNavigationClick('management-board')"
+          >management board</a
+        >
+      </li>
+
+      <li class="header-links">
+        <a class="header-link" (click)="handleNavigationClick('contact-us')"
+          >contact us</a
+        >
+      </li>
+    </ul>
+    <!-- /Links -->
+
+    <!-- Menu button for smaller devices -->
+    <div class="flex mb-2 px-[15px] justify-end lg:hidden">
+      <button
+        [attr.aria-label]="
+          isOpen() ? 'Close navigation menu' : 'Open navigation menu'
+        "
+        role="switch"
+        (click)="toggleMenu()"
+        type="button"
+        class="bg-[#353535] rounded-[4px] flex justify-center items-center w-[43px] h-[33px]"
+      >
+        <mat-icon svgIcon="bars" />
+      </button>
+    </div>
+    <!-- /Menu button for smaller devices -->
+
+    <!-- Menu items -->
+    <div
+      #menu
+      [ngClass]="{ '!bg-black': isScrolled() }"
+      class="overflow-hidden bg-white z-10 transition-all duration-300 ease-in-out lg:hidden"
+      [style.max-height]="isOpen() ? menuHeight + 'px' : '0px'"
+    >
+      <hr />
+
+      <!-- Logo and link -->
+      <div class="px-[10px]">
+        <img
+          class="logo-size-sm mt-[-25px]"
+          src="images/logo.webp"
+          alt="Logo"
+        />
+      </div>
+      <!-- /Logo and link -->
+
+      <!-- Other links -->
+      <ul
+        class="flex flex-col text-[#414141] gap-4"
+        [class.link-color]="isScrolled()"
+      >
+        <li class="header-links">
+          <a class="header-link" (click)="handleNavigationClick('header')"
+            >home</a
+          >
+        </li>
+        <li class="header-links">
+          <a class="header-link" (click)="handleNavigationClick('about-us')"
+            >about us</a
+          >
+        </li>
+
+        <li class="header-links">
+          <a class="header-link" (click)="handleNavigationClick('products')"
+            >product & services</a
+          >
+        </li>
+
+        <li class="header-links">
+          <a class="header-link" (click)="handleNavigationClick('partners')"
+            >partners/clients</a
+          >
+        </li>
+
+        <li class="header-links">
+          <a
+            class="header-link"
+            (click)="handleNavigationClick('management-board')"
+            >management board</a
+          >
+        </li>
+
+        <li class="header-links">
+          <a class="header-link" (click)="handleNavigationClick('contact-us')"
+            >contact us</a
+          >
+        </li>
+      </ul>
+      <!-- /Other links -->
+    </div>
+    <!-- /Menu items -->
+  </nav>
+</header>
+<!-- /Header  -->

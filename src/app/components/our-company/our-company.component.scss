@@ -1,0 +1,14 @@
+.our-company-grid {
+  display: grid;
+  column-gap: 70px;
+  row-gap: 50px;
+  padding-inline: 15px;
+}
+
+@media screen and (min-width: 900px) {
+  .our-company-grid {
+    padding-inline: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}

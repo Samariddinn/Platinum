@@ -1,1 +1,142 @@
-/* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+:root {
+  --clr-light-black: #414141;
+  --clr-light-blue: #00bcd4;
+}
+
+// Reset styles
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+p {
+  font-family: "Open Sans", sans-serif !important;
+  line-height: 26px;
+  font-size: 0.875rem;
+  color: var(--clr-light-black);
+}
+
+// End of reset styles
+
+// Customize mat-icon
+.mat-icon {
+  width: auto !important;
+  height: auto !important;
+  font-size: inherit !important;
+}
+
+// End of customization
+
+.title-color {
+  color: var(--clr-light-black);
+}
+
+// Shared style
+.shared-py {
+  padding-block: 70px;
+}
+
+.shared-title-style {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.shared-span {
+  color: #00bcd4;
+}
+
+.shared-max-w {
+  max-width: 1800px;
+  margin-inline: auto;
+}
+
+//Animation
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes animate-header {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.8s ease-out;
+
+  &.ready {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.8s ease-out;
+  animation-delay: 3s;
+
+  &.ready {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-header {
+  animation: animate-header 0.8s ease-out forwards;
+}
+
+// Prevent flash of unstyled content
+
+// end of Animation
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 22px;
+  }
+}

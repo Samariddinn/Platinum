@@ -1,0 +1,34 @@
+<!-- Product and services -->
+<div class="shared-py bg-[#f5fcfd]">
+  <h1 class="shared-title-style mb-13 text-center">
+    Our Product & <span class="shared-span">Services</span>
+  </h1>
+
+  <!-- Grid -->
+  <div class="product-grid shared-max-w">
+    <!-- Content  -->
+    @for(item of productsData; track item.id) {
+    <div class="px-[15px] mb-7 flex flex-col gap-[15px]">
+      <img
+        appLazyLoadImg
+        [imgSrc]="item.img"
+        [placeholder]="'images/placeholder.webp'"
+        alt="Product img"
+      />
+
+      <div
+        class="p-[25px] h-[70px] flex justify-center items-center border border-[#9a9a9a] rounded-[5px]"
+      >
+        <span class="font-bold text-center title-color text-[0.75rem]">
+          {{ item.text }}
+        </span>
+      </div>
+    </div>
+    }
+
+    <!-- /Content  -->
+  </div>
+  <!-- /Grid -->
+</div>
+
+<!-- /Product and services -->

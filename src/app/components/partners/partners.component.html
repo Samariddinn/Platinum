@@ -1,0 +1,29 @@
+<!-- Partners -->
+<div>
+  <h2 class="shared-title-style mb-13 text-center">
+    Our Strategic <span class="shared-span">Partners / Clients</span>
+  </h2>
+
+  <div class="partners-grid">
+    @for (partner of partnersData; track partner.id) {
+    <div class="partners-card">
+      <!-- Partner img -->
+      <img
+        appLazyLoadImg
+        [imgSrc]="partner.img"
+        [placeholder]="'images/placeholder.webp'"
+        alt="Partner img"
+      />
+      <!-- /Partner img -->
+
+      <!-- Overlay -->
+      <div class="overlay">
+        <span>{{ partner.text }}</span>
+      </div>
+      <!-- /Overlay -->
+    </div>
+    }
+  </div>
+</div>
+
+<!-- /Partners -->

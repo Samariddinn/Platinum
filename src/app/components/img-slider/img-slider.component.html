@@ -1,0 +1,36 @@
+<!-- Img slider logic -->
+<div class="relative shared-max-w mt-18 overflow-x-hidden w-full">
+  <div
+    class="flex transition-all duration-800 ease-in-out"
+    [style.transform]="'translateX(-' + currentIndex() * 100 + '%)'"
+  >
+    @for(slide of slides; track slide.image; ) {
+    <div class="slide min-w-full relative">
+      <img class="w-full" [src]="slide.image" alt="Slide image" />
+      <div class="absolute text-shadow mx-14 inset-0 flex justify-center top-1">
+        <h3
+          class="animate-slide-left text-[15px] absolute top-1 text-shadow !text-white uppercase font-bold text-center md:text-[2.5rem] md:top-[40%]"
+          [class.ready]="isReady()"
+        >
+          professional solution
+        </h3>
+      </div>
+    </div>
+    }
+  </div>
+
+  <!-- Dots -->
+  <div
+    class="dots bottom-0 sm:bottom-2 md:bottom-4 absolute w-full flex justify-center gap-[6px]"
+  >
+    @for(slide of slides; track slide.image;let i = $index ) {
+    <span
+      class="h-[11px] border border-[#fff] w-[11px] bg-[#c7c7c7] rounded-[50%] inline-block cursor-pointer"
+      [class.active]="i === currentIndex()"
+      (click)="goToSlide(i)"
+    >
+    </span>
+    }
+  </div>
+</div>
+<!-- /Img slider logic -->

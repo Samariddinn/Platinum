@@ -1,0 +1,43 @@
+.logo-size {
+  width: 170px;
+  height: 100%;
+}
+
+.header-link {
+  font: {
+    size: 0.875rem;
+    weight: 400;
+  }
+  text-transform: uppercase;
+  padding: 10px 15px;
+  transition: 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.link-color {
+  color: #9b9b9b !important;
+}
+
+.logo-size-sm {
+  height: 100%;
+  width: 150px;
+}
+
+@layer header {
+  @media (min-width: 1200px) {
+    .logo-size {
+      width: 270px !important;
+    }
+  }
+  @media (min-width: 1023px) and (max-width: 1095px) {
+    .header-link {
+      font: {
+        size: 0.7rem !important;
+      }
+    }
+  }
+}
