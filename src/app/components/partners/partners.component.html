@@ -1,5 +1,5 @@
 <!-- Partners -->
-<div>
+<div class="shared-max-w shared-py">
   <h2 class="shared-title-style mb-13 text-center">
     Our Strategic <span class="shared-span">Partners / Clients</span>
   </h2>
@@ -8,7 +8,7 @@
     @for (partner of partnersData; track partner.id) {
     <div class="partners-card">
       <!-- Partner img -->
-      <img
+      <img class="rounded-md"
         appLazyLoadImg
         [imgSrc]="partner.img"
         [placeholder]="'images/placeholder.webp'"
