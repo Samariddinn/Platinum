@@ -4,22 +4,25 @@
     Our Strategic <span class="shared-span">Partners / Clients</span>
   </h2>
 
-  <div class="partners-grid">
+  <div class=" w-full">
     @for (partner of partnersData; track partner.id) {
-    <div class="partners-card">
-      <!-- Partner img -->
-      <img class="rounded-md"
-        appLazyLoadImg
-        [imgSrc]="partner.img"
-        [placeholder]="'images/placeholder.webp'"
-        alt="Partner img"
-      />
-      <!-- /Partner img -->
+    <div class="partners-card w-full ">
+      <div class="flex items-center min-w-[250px] w-[250px] md:min-w-[400px] md:w-[400px] mx-auto justify-center">
+  <!-- Partner img -->
+  <img class="rounded-md w-full "
+  appLazyLoadImg
+  [imgSrc]="partner.img"
+  [placeholder]="'images/placeholder.webp'"
+  alt="Partner img"
+/>
+<!-- /Partner img -->
+      </div>
+    
 
       <!-- Overlay -->
-      <div class="overlay">
+      <!-- <div class="overlay">
         <span>{{ partner.text }}</span>
-      </div>
+      </div> -->
       <!-- /Overlay -->
     </div>
     }
